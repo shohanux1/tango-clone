@@ -22,7 +22,7 @@ const Modal = ({
   return (
     <>
       <Transition appear show={isOpen} as={Fragment}>
-        <Dialog as="div" className="relative z-50" onClose={toggleModal}>
+        <Dialog as="div" className="relative z-50 " onClose={toggleModal}>
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -36,7 +36,7 @@ const Modal = ({
           </Transition.Child>
 
           <div className="fixed inset-0 overflow-y-auto">
-            <div className="flex min-h-full items-center justify-center p-4 text-center">
+            <div className="flex min-h-full items-center justify-center text-center">
               <Transition.Child
                 as={Fragment}
                 enter="ease-out duration-300"
@@ -46,11 +46,11 @@ const Modal = ({
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full max-w-lg transform  rounded-2xl bg-white  text-left align-middle shadow-xl transition-all">
-                  <div className="p-6">
+                <Dialog.Panel className="w-full max-w-xl transform  rounded-2xl bg-white  text-left align-middle shadow-xl transition-all mx-6">
+                  <div className="">
                     <Dialog.Title
                       as="h3"
-                      className="text-lg font-medium leading-6 text-gray-900"
+                      className="text-lg font-medium leading-6 text-gray-900 px-6 pt-6"
                     >
                       {title}
                     </Dialog.Title>

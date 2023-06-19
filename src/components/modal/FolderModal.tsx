@@ -15,7 +15,7 @@ const FolderModal = ({ isOpen, toggleModal }: FolderModalProps) => {
       toggleModal={toggleModal}
       isOpen={isOpen}
     >
-      <div className="mt-4">
+      <div className="mt-4 px-6">
         <Input
           placeholder="Enter a folder name for your workflow"
           type="text"

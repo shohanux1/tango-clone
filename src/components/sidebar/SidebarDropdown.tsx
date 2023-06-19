@@ -26,7 +26,7 @@ const submenuItems = [
 
 const SidebarDropdown = () => {
   return (
-    <Menu>
+    <Menu as="div" className="relative inline-block text-left w-full z-20">
       <Menu.Button
         className={
           "flex items-center justify-between gap-2 border-b w-full h-20  px-4"
@@ -40,15 +40,15 @@ const SidebarDropdown = () => {
             className="cursor-pointer"
           />
 
-          <span className="text-sm flex-1 font-medium">
-            Shohanur's Workspace
+          <span className="text-sm text-slate-600 flex-1 font-medium">
+            Abdullah&apos;s Workspace
           </span>
         </div>
         <BiChevronDown className="text-gray-100" size={20} />
       </Menu.Button>
 
       <Menu.Items>
-        <div className="absolute top-24 left-3 text-xs font-medium border shadow px-4 py-3 rounded-md w-full bg-white">
+        <div className="absolute mt-2 left-3 text-xs font-medium border shadow px-4 py-3 rounded-md w-full bg-white">
           <h1 className=" text-gray-500 mb-4">Workspace Actions</h1>
 
           {submenuItems.map((item, index) => (
@@ -61,7 +61,7 @@ const SidebarDropdown = () => {
           ))}
 
           <hr />
-          <h1 className=" text-gray-500 py-3">shohanux@gmail.com</h1>
+          <h1 className=" text-gray-500 py-3">abdullah@gmail.com</h1>
           <div
             className={
               "flex items-center justify-between h-fit rounded-md  w-full mb-3  text-gray-600 cursor-pointer"
@@ -74,7 +74,7 @@ const SidebarDropdown = () => {
               className="cursor-pointer mr-2"
             />
             <span className="text-sm font-medium flex-1">
-              Shohanur's Workspace
+              Abdullah&apos;s Workspace
             </span>
             <span className="flex items-center justify-center text-2xl  h-8 w-8 transition rounded-full hover:bg-gray-100">
               <BiCheck />

@@ -1,12 +1,42 @@
 "use client";
 
+import { useState } from "react";
 import Avatar from "../avatar/Avatar";
 import CardsIcon from "./CardsIcon";
 import { BiDotsHorizontalRounded, BiLinkAlt, BiStar } from "react-icons/bi";
+import CardLoading from "./CardLoading";
+import Dropdown from "../dropdown/Dropdown";
 
-const Cards = () => {
+const links = [
+  { href: "/account-settings", label: "Share & Export" },
+  { href: "/support", label: "Guide Me" },
+  { href: "/license", label: "Rename" },
+  { href: "/sign-out", label: "Duplicate" },
+  { href: "/sign-out", label: "Move to..." },
+  { href: "/sign-out", label: "Archive" },
+  { href: "/sign-out", label: "Analytics" },
+];
+
+type CardsProps = {
+  loading?: boolean;
+};
+
+const Cards = ({ loading }: CardsProps) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handlePopover = () => {
+    setIsOpen(!isOpen);
+  };
+
+  if (loading) {
+    return <CardLoading />;
+  }
+
   return (
-    <div className=" relative min-h-[320px] overflow-hidden border rounded-lg flex flex-col justify-between transition hover:shadow-lg group cursor-pointer">
+    <div
+      onMouseOut={() => setIsOpen(false)}
+      className="w-full md:max-w-sm relative min-h-[320px] overflow-hidden border rounded-lg flex flex-col justify-between transition hover:shadow-lg group cursor-pointer"
+    >
       <div
         className="
         flex-1
@@ -26,9 +56,19 @@ const Cards = () => {
         />
       </div>
 
-      <div className="opacity-0 absolute inset-0 bg-teal-800 bg-opacity-80 h-[calc(100%-9rem)] transition duration-500 w-full group-hover:opacity-100">
+      <div
+        className={`${
+          isOpen ? "opacity-100" : "opacity-0"
+        }  absolute inset-0 bg-indigo-800 bg-opacity-80 h-[calc(100%-9rem)] transition duration-500 w-full group-hover:opacity-100`}
+      >
         <div className=" flex items-center absolute right-4 top-4">
-          <CardsIcon size={24} icon={BiDotsHorizontalRounded} />
+          <Dropdown links={links}>
+            <CardsIcon
+              onClick={handlePopover}
+              size={24}
+              icon={BiDotsHorizontalRounded}
+            />
+          </Dropdown>
           <CardsIcon className="rotate-45" size={20} icon={BiLinkAlt} />
           <CardsIcon size={18} icon={BiStar} />
         </div>

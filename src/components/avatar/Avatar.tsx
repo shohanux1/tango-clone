@@ -36,7 +36,7 @@ const Avatar = ({
           title={title}
         />
       ) : (
-        <div className="flex items-center justify-center bg-primary-100 w-full h-full ">
+        <div className="flex items-center justify-center bg-indigo-100 w-full h-full ">
           {title?.charAt(0)}
         </div>
       )}

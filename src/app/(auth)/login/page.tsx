@@ -1,18 +1,21 @@
 import Button from "@/src/components/button/Button";
 import Input from "@/src/components/input/Input";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 const Login = () => {
   return (
     <div className="flex min-h-screen flex-col justify-center px-6 py-12 lg:px-8">
-      <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-        {/* <img
-          className="mx-auto h-10 w-auto"
-          src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+      <div className="sm:mx-auto sm:w-full sm:max-w-sm ">
+        <Image
+          className="mx-auto h-20 w-auto"
+          src="https://app.tango.us/static/images/tango-icon-logo.svg"
           alt="Your Company"
-        /> */}
-        <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
+          width={100}
+          height={100}
+        />
+        <h2 className="mt-6 text-center text-2xl font-semibold leading-9 tracking-tight text-gray-900">
           Sign in to your account
         </h2>
       </div>
@@ -106,7 +109,7 @@ const Login = () => {
         </Button>
 
         <p className="mt-8 text-center text-sm text-gray-500">
-          Don't have an account?{" "}
+          Don&apos;t have an account?{" "}
           <a
             href="#"
             className="font-semibold leading-6 text-primary hover:text-indigo-500"

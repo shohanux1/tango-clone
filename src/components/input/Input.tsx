@@ -41,13 +41,13 @@ const Input = ({
             {label}
           </label>
         )}
-        <div className="relative ">
+        <div className="relative">
           <input
             className={`${
               Icon ? "pl-10" : ""
             } border border-gray-300 text-sm px-4  py-2 rounded-md focus:outline-none focus:border-primary w-full focus:ring-2 focus:ring-indigo-200 focus:border-transparent${
               error && "border-red-500"
-            } ${className}`}
+            }`}
             onClick={onClick}
             disabled={disabled}
             type={type}

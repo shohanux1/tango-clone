@@ -1,11 +1,9 @@
 import React from "react";
-import WorkflowHeader from "@/src/components/workflow/WorkflowHeader";
-import Cards from "@/src/components/cards/Boards";
+import Cards from "@/src/components/cards/Cards";
 
 const Home = () => {
   return (
     <div className="grid grid-cols-auto-fit gap-4">
-      <Cards />
       <Cards />
       <Cards />
       <Cards />

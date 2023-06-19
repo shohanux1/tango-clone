@@ -1,5 +1,6 @@
 import Button from "@/src/components/button/Button";
 import Input from "@/src/components/input/Input";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -7,26 +8,19 @@ const Signup = () => {
   return (
     <div className="flex min-h-screen flex-col justify-center px-6 py-12 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-        {/* <img
-          className="mx-auto h-10 w-auto"
-          src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+        <Image
+          className="mx-auto h-20 w-auto"
+          src="https://app.tango.us/static/images/tango-icon-logo.svg"
           alt="Your Company"
-        /> */}
-        <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
+          width={100}
+          height={100}
+        />
+        <h2 className="mt-6 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
           Create your account
         </h2>
-
-        <p
-          className="text-center
-        text-gray-900
-        mt-2 
-        "
-        >
-          Automatic tutorials are at your fingertips.
-        </p>
       </div>
 
-      <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+      <div className="mt-6 sm:mx-auto sm:w-full sm:max-w-sm">
         <form className="space-y-6" action="#" method="POST">
           <div className="flex items-center gap-4">
             <div>
@@ -36,6 +30,7 @@ const Signup = () => {
                 type="text"
                 required
                 label="First Name"
+                className="w-full"
               />
             </div>
 
@@ -46,6 +41,7 @@ const Signup = () => {
                 type="text"
                 required
                 label="Last Name"
+                className="w-full"
               />
             </div>
           </div>

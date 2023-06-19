@@ -3,7 +3,7 @@ import Modal from "./Modal";
 import Input from "../input/Input";
 import Button from "../button/Button";
 import { BiChevronDown, BiPlus } from "react-icons/bi";
-import Selectbox from "../Selectbox/Selectbox";
+import SelectBox from "../selectbox/Selectbox";
 
 type InviteModalProps = {
   isOpen: boolean;
@@ -26,22 +26,22 @@ const InviteModal = ({ isOpen, toggleModal }: InviteModalProps) => {
       toggleModal={toggleModal}
       isOpen={isOpen}
     >
-      <div className="flex items-end mt-4">
-        <div className="w-full md:basis-3/5 ">
-          <Input type="email" label="Email" />
+      <div className="px-6">
+        <div className="flex items-center mt-4 gap-4">
+          <div className="w-full">
+            <Input type="email" placeholder="Enter your email" />
+          </div>
+          <SelectBox />
         </div>
-        <div className="w-full md:basis-2/5 ml-4">
-          <Selectbox />
-        </div>
-      </div>
 
-      <Button
-        className="mt-4 text-xs border flex-1 border-gray-300 "
-        variant="secondary"
-      >
-        <BiPlus size={14} />
-        Add another email
-      </Button>
+        <Button
+          className="mt-4 text-xs border flex-1 border-gray-300"
+          variant="secondary"
+        >
+          <BiPlus size={14} />
+          Add another email
+        </Button>
+      </div>
     </Modal>
   );
 };

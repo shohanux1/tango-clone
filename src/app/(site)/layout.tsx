@@ -1,6 +1,6 @@
 import Navbar from "@/src/components/navbar/Navbar";
+import SubHeader from "@/src/components/navbar/SubHeader";
 import Sidebar from "@/src/components/sidebar/Sidebar";
-import WorkflowHeader from "@/src/components/workflow/WorkflowHeader";
 import { type } from "os";
 import React from "react";
 
@@ -17,7 +17,7 @@ const Layout = ({ children }: LayoutProps) => {
 
       <div className="flex flex-col flex-1 ">
         <Navbar />
-        <WorkflowHeader />
+        <SubHeader />
         <div className="container max-w-7xl mx-auto px-4 md:px-8">
           {children}
         </div>

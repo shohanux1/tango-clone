@@ -6,7 +6,12 @@ import Avatar from "../avatar/Avatar";
 import { SidebarContext } from "@/src/context/SidebarContext";
 import Button from "../button/Button";
 import WorkflowModal from "../modal/WorkflowModal";
-import Navmenu from "./Navmenu";
+import Dropdown from "../dropdown/Dropdown";
+
+const links = [
+  { href: "/profile", label: "Profile Settings" },
+  { href: "/support", label: "Logout" },
+];
 
 const Navbar = () => {
   const { toggleSidebar } = useContext(SidebarContext);
@@ -23,12 +28,12 @@ const Navbar = () => {
         <div className="flex items-center md:hidden">
           <button
             onClick={() => toggleSidebar()}
-            className="flex items-center justify-center h-10 w-10 rounded-full text-2xl transition duration-200 hover:bg-gray-100"
+            className="flex items-center justify-center h-10 w-10 rounded-full text-2xl transition duration-200 hover:bg-slate-100"
           >
             <BiMenuAltLeft />
           </button>
 
-          <button className="flex items-center justify-center h-10 w-10 rounded-full text-xl transition duration-200 hover:bg-gray-100">
+          <button className="flex items-center justify-center h-10 w-10 rounded-full text-xl transition duration-200 hover:bg-slate-100">
             <BiSearch />
           </button>
         </div>
@@ -37,14 +42,14 @@ const Navbar = () => {
           <Button onClick={toggleModal} variant="primary">
             New Workflow
           </Button>
-          <Navmenu>
+          <Dropdown links={links}>
             <Avatar
               size="medium"
               alt="avatar"
               src="https://avatars.githubusercontent.com/u/25126281?v=4"
               className="cursor-pointer"
             />
-          </Navmenu>
+          </Dropdown>
         </div>
       </div>
     </>

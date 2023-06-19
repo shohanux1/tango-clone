@@ -1,34 +1,41 @@
 "use client";
 
 import Link from "next/link";
-import React from "react";
+import React, { useContext } from "react";
+import { usePathname } from "next/navigation";
+import { SidebarContext } from "@/src/context/SidebarContext";
 
 type SidebarLinksProps = {
   title: string;
   icon: any;
   link: string;
-  active?: boolean;
+  active?: any;
+  className?: string;
 };
 
 const SidebarLinks = ({
   title,
   icon: Icon,
   link,
-  active,
+  className,
 }: SidebarLinksProps) => {
+  const pathname = usePathname();
+  const { toggleSidebar } = useContext(SidebarContext);
+
   return (
-    // sidebar link component
     <Link
+      onClick={toggleSidebar}
       className={`flex items-center gap-2  py-2 px-3 rounded-md hover:translate-x-1 transition mb-2
         ${
-          active
+          pathname === link
             ? "bg-indigo-200/40 text-indigo-600"
-            : "text-black/80 hover:bg-[#F6F6F6]"
+            : "text-gray-700 hover:bg-[#F6F6F6]"
         }
+        ${className}
       `}
       href={link}
     >
-      <Icon set="bulk" size={20} />
+      <Icon set="two-tone" size={20} />
       <span className="text-sm">{title}</span>
     </Link>
   );
