@@ -3,7 +3,7 @@ import Modal from "./Modal";
 import Input from "../input/Input";
 import Button from "../button/Button";
 import { BiChevronDown, BiPlus } from "react-icons/bi";
-import SelectBox from "../selectbox/Selectbox";
+import SelectBox from "../Selectbox/Selectbox";
 
 type InviteModalProps = {
   isOpen: boolean;
